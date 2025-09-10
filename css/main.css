@@ -5,6 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 
+
+
+
 *,
 html,
 body {
@@ -825,3 +828,7 @@ header {
         padding: 0 1rem;
     }
 }
+
+
+
+/* Professional Modal Styling */

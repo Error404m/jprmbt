@@ -1,0 +1,432 @@
+
+/* Modal backdrop with smooth transition */
+.modal {
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease-in-out;
+}
+
+.modal.fade .modal-dialog {
+  transform: translateY(-50px);
+  transition: transform 0.3s ease-out;
+}
+
+.modal.show .modal-dialog {
+  transform: translateY(0);
+}
+
+/* Modal dialog container */
+.modal-dialog {
+  max-width: 90%;
+  margin: 2rem auto;
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .modal-dialog {
+    max-width: 1200px;
+  }
+}
+
+/* Modal content styling */
+.modal-content {
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+.modal-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #007bff, #6f42c1, #e83e8c, #fd7e14);
+  z-index: 1;
+}
+
+/* Modal header */
+.modal-header {
+  border-bottom: 2px solid #f1f3f4;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  position: relative;
+}
+
+.btn-close {
+  background: linear-gradient(45deg, #dc3545, #c82333);
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: white;
+  opacity: 1;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+.btn-close:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+  background: linear-gradient(45deg, #c82333, #a71e2a);
+}
+
+.btn-close:focus {
+  box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+/* Modal body */
+.modal-body {
+  padding: 2rem;
+  background: #ffffff;
+  position: relative;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+/* Custom scrollbar for modal body */
+.modal-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #007bff, #0056b3);
+  border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0056b3, #004085);
+}
+
+/* Portfolio modal title */
+.portfolio-modal-title {
+    margin-top: 0 !important;
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #070a57, #4361ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Divider styling */
+.divider-custom {
+  margin: 2rem 0;
+  position: relative;
+}
+
+.divider-custom-line {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #007bff, transparent);
+  border-radius: 1px;
+}
+
+.divider-custom-icon {
+  color: #007bff;
+  font-size: 1.5rem;
+  background: white;
+  padding: 0 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Content styling */
+.modal-body p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.modal-body ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.modal-body ul li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #34495e;
+}
+
+.modal-body ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #28a745;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Image styling */
+.modal-body img {
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  margin: 1rem 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.modal-body img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Video container styling */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  margin: 2rem 0;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 15px;
+}
+
+/* Button styling */
+.modal-body .btn {
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  margin: 0.5rem;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #218838, #17a2b8);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+  color: white;
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #dc3545, #c82333);
+  color: white;
+  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+.btn-danger:hover {
+  background: linear-gradient(135deg, #c82333, #a71e2a);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(220, 53, 69, 0.4);
+  color: white;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #0056b3, #004085);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.4);
+  color: white;
+}
+
+/* Button ripple effect */
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+.btn:active::before {
+  width: 200px;
+  height: 200px;
+}
+
+/* Section headings in modal */
+.modal-body h1,
+.modal-body h2,
+.modal-body h3 {
+  color: #070a57;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.modal-body h1 {
+  font-size: 2rem;
+  border-bottom: 3px solid #007bff;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.modal-body h2 {
+  font-size: 1.6rem;
+  position: relative;
+}
+
+.modal-body h2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #007bff, #6f42c1);
+}
+
+/* HR styling */
+.modal-body hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #dee2e6, transparent);
+  margin: 2rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .modal-dialog {
+    margin: 1rem;
+    max-width: calc(100% - 2rem);
+  }
+  
+  .modal-body {
+    padding: 1.5rem;
+  }
+  
+  .portfolio-modal-title {
+    font-size: 2rem;
+  }
+  
+  .modal-body .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    margin: 0.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal-body {
+    padding: 1rem;
+  }
+  
+  .portfolio-modal-title {
+    font-size: 1.7rem;
+  }
+  
+  .modal-body p,
+  .modal-body ul li {
+    font-size: 1rem;
+  }
+}
+
+/* Loading animation for images */
+.modal-body img {
+  opacity: 0;
+  animation: fadeInImage 0.5s ease-in-out 0.2s forwards;
+}
+
+@keyframes fadeInImage {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Text selection styling */
+.modal-body ::selection {
+  background: rgba(0, 123, 255, 0.2);
+  color: #070a57;
+}
+
+/* Focus states for accessibility */
+.modal-content:focus {
+  outline: 3px solid rgba(0, 123, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* Smooth scroll behavior */
+.modal-body {
+  scroll-behavior: smooth;
+}
+
+
+.fixed-title {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #fff; /* keeps text readable */
+  padding: 1rem 2rem; /* adjust if you want less space */
+  border-bottom: 2px solid #f1f3f4;
+}
+
+.fixed-title h2 {
+  margin: 0; /* remove extra spacing */
+  font-size: 2rem;
+  text-align: center;
+  flex-grow: 1;
+}
+
+
+
+
+
+.custom-modal {
+  max-width: 802px; /* Adjust as needed */
+}
+
+
+
+
+
+
